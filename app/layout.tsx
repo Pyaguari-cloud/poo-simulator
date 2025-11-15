@@ -1,11 +1,16 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
+// CORRECCIÓN: Importamos 'Inter' desde 'next/font/google'
+import { Inter } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 
-const _geist = Geist({ subsets: ["latin"] })
-const _geistMono = Geist_Mono({ subsets: ["latin"] })
+// CORRECCIÓN: Definimos 'Inter'
+const inter = Inter({ subsets: ["latin"] })
+
+// Las fuentes 'Geist' fueron eliminadas porque causaban el error de compilación
+// const _geist = Geist({ subsets: ["latin"] })
+// const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "El Simulador de Objetos - POO en Acción",
@@ -20,7 +25,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className={`font-sans antialiased`}>
+      {/* CORRECCIÓN: Aplicamos la clase de la fuente 'inter' al body */}
+      <body className={`${inter.className} antialiased`}>
         {children}
         <Analytics />
       </body>
