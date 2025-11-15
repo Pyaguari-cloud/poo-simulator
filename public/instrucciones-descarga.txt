@@ -1,0 +1,65 @@
+================================================================================
+GUIÓN PARA TU PRESENTACIÓN DE POO - Casa Abierta
+================================================================================
+
+¡Felicidades! Tienes 2 versiones del guión disponible:
+
+1. VERSIÓN HTML (RECOMENDADA):
+   - Archivo: guion-presentacion-poo.html
+   - Cómo usar: 
+     a) Abre el archivo en tu navegador (Chrome, Firefox, Safari, etc.)
+     b) Presiona Ctrl+P (o Cmd+P en Mac)
+     c) Selecciona "Guardar como PDF"
+     d) ¡Listo! Tendrás un PDF profesional
+
+   Ventajas:
+   - Diseño hermoso y profesional
+   - Fácil de leer
+   - Colores y estilos listos para imprimir
+   - Compatible con todos los navegadores
+
+2. VERSIÓN MARKDOWN:
+   - Archivo: guion-presentacion-poo.md
+   - Cómo usar:
+     a) Abre en cualquier editor de texto
+     b) Puedes convertirlo a Word, PDF, etc.
+     c) Compatible con Notion, Obsidian, etc.
+
+   Ventajas:
+   - Texto plano y editable
+   - Compatible con muchas plataformas
+   - Ligero y fácil de compartir
+
+================================================================================
+PASOS PARA LA PRESENTACIÓN
+================================================================================
+
+ANTES DE LA CASA ABIERTA:
+1. Imprime o descarga el guión en PDF
+2. Que cada estudiante lea su sección varias veces
+3. Ensayen juntos al menos 2-3 veces
+4. Cronométren la presentación (debe ser 5-8 minutos)
+5. Preparen obsequios pequeños para el quiz
+
+DURANTE LA PRESENTACIÓN:
+1. Usa la app web "El Simulador de Objetos" para mostrar en vivo
+2. Sigue el guión paso a paso
+3. Señala siempre en la pantalla
+4. Haz pausas para que el público procese
+5. Mantén la energía positiva
+
+DESPUÉS DE LA PRESENTACIÓN:
+1. Agradece al público
+2. Recoge comentarios
+3. Documenta cómo fue
+
+================================================================================
+CONTACTO Y SOPORTE
+================================================================================
+
+Si tienes preguntas sobre el guión o la presentación, consulta con tu profesor.
+
+¡Buena suerte en tu presentación! 
+Estamos seguros de que será excelente.
+
+================================================================================

@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guión de Presentación - POO en Acción</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #7c3aed;
+            padding-bottom: 20px;
+        }
+        
+        .header h1 {
+            color: #7c3aed;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            color: #666;
+            font-size: 1.1em;
+        }
+        
+        .meta-info {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+            background: #f0f0f0;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        
+        .meta-info div {
+            text-align: center;
+        }
+        
+        .meta-info strong {
+            display: block;
+            color: #7c3aed;
+            font-size: 0.9em;
+            text-transform: uppercase;
+        }
+        
+        .meta-info span {
+            display: block;
+            font-size: 1.2em;
+            margin-top: 5px;
+        }
+        
+        .student-section {
+            margin: 40px 0;
+            page-break-inside: avoid;
+            border-left: 4px solid #7c3aed;
+            padding-left: 20px;
+        }
+        
+        .student-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .student-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: #7c3aed;
+            color: white;
+            border-radius: 50%;
+            font-weight: bold;
+            font-size: 1.3em;
+        }
+        
+        .student-info h2 {
+            color: #7c3aed;
+            margin-bottom: 5px;
+        }
+        
+        .student-info .subtitle {
+            color: #999;
+            font-size: 0.95em;
+        }
+        
+        .guion {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 15px 0;
+            line-height: 1.8;
+        }
+        
+        .guion strong {
+            color: #7c3aed;
+        }
+        
+        .code-block {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+        
+        .checklist {
+            background: #f0f9ff;
+            padding: 15px;
+            border-left: 3px solid #0ea5e9;
+            margin: 15px 0;
+            border-radius: 3px;
+        }
+        
+        .checklist h4 {
+            color: #0ea5e9;
+            margin-bottom: 10px;
+        }
+        
+        .checklist ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .checklist li {
+            padding: 5px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .checklist li:before {
+            content: "☐";
+            position: absolute;
+            left: 0;
+            color: #0ea5e9;
+        }
+        
+        .key-points {
+            background: #fef3c7;
+            padding: 15px;
+            border-left: 3px solid #f59e0b;
+            margin: 15px 0;
+            border-radius: 3px;
+        }
+        
+        .key-points h4 {
+            color: #d97706;
+            margin-bottom: 10px;
+        }
+        
+        .key-points ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .key-points li {
+            padding: 5px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .key-points li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #d97706;
+            font-weight: bold;
+        }
+        
+        .summary-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .summary-table thead {
+            background: #7c3aed;
+            color: white;
+        }
+        
+        .summary-table th,
+        .summary-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .summary-table tbody tr:hover {
+            background: #f5f5f5;
+        }
+        
+        .tips-section {
+            background: #dcfce7;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 30px 0;
+            border-left: 4px solid #16a34a;
+        }
+        
+        .tips-section h3 {
+            color: #16a34a;
+            margin-bottom: 15px;
+        }
+        
+        .tips-section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .tips-section li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .tips-section li:before {
+            content: "💡";
+            position: absolute;
+            left: 0;
+        }
+        
+        .footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 2px solid #e0e0e0;
+            text-align: center;
+            color: #999;
+            font-size: 0.9em;
+        }
+        
+        @media print {
+            body {
+                background: white;
+            }
+            .container {
+                box-shadow: none;
+                max-width: 100%;
+            }
+            .student-section {
+                page-break-inside: avoid;
+            }
+        }
+        
+        .btn-print {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #7c3aed;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        
+        .btn-print:hover {
+            background: #6d28d9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button class="btn-print" onclick="window.print()">Imprimir / Guardar como PDF</button>
+        
+        <div class="header">
+            <h1>El Simulador de Objetos</h1>
+            <p>POO en Acción - Guión de Presentación</p>
+        </div>
+        
+        <div class="meta-info">
+            <div>
+                <strong>Duración</strong>
+                <span>5-8 minutos</span>
+            </div>
+            <div>
+                <strong>Participantes</strong>
+                <span>4 estudiantes</span>
+            </div>
+            <div>
+                <strong>Materia</strong>
+                <span>Programación y BD</span>
+            </div>
+            <div>
+                <strong>Formato</strong>
+                <span>Interactivo</span>
+            </div>
+        </div>
+
+        <!-- ESTUDIANTE 1 -->
+        <div class="student-section">
+            <div class="student-header">
+                <div class="student-number">1</div>
+                <div class="student-info">
+                    <h2>Presentador / Coordinador Técnico</h2>
+                    <div class="subtitle">Introducción - 1-2 minutos</div>
+                </div>
+            </div>
+            
+            <div class="guion">
+                <p><strong>"Buenos días/tardes, bienvenidos a nuestro stand: 'El Simulador de Objetos - POO en Acción'.</strong></p>
+                
+                <p><strong>Hoy vamos a mostrarles algo fascinante: ¿cómo los programadores crean videojuegos, aplicaciones móviles y software que usan todos los días?</strong></p>
+                
+                <p><strong>La respuesta está en algo llamado Programación Orientada a Objetos, o POO para los amigos.</strong></p>
+                
+                <p><strong>Permítanme explicar con un ejemplo simple:</strong></p>
+                
+                <p><em>[Señala la pantalla]</em></p>
+                
+                <p><strong>Imaginen que ustedes quieren crear un videojuego. En lugar de escribir millones de líneas de código sin orden, los programadores usan algo similar a un 'molde' o 'receta'. Es como si dijéramos:</strong></p>
+                
+                <p><strong>'Vamos a crear un molde para hacer personajes. Cada personaje tendrá:</strong>
+                <br>- Un nombre (ejemplo: 'Warrior')
+                <br>- Una cantidad de vida (ejemplo: 100 puntos)
+                <br>- Un poder especial (ejemplo: lanzar magia)</p>
+                
+                <p><strong>Una vez que tenemos ese 'molde', podemos hacer 10, 100, o 1,000 personajes diferentes sin escribir todo de nuevo. Solo modificamos los detalles.</strong></p>
+                
+                <p><strong>Eso es la esencia de POO: crear moldes reutilizables para evitar repetir código.</strong></p>
+                
+                <p><strong>¿Por qué es importante?</strong></p>
+                <ul>
+                    <li>✓ Es más rápido - No escriben lo mismo una y otra vez</li>
+                    <li>✓ Es más seguro - Si hay un error, lo arreglan en un solo lugar</li>
+                    <li>✓ Es más fácil de mantener - Otros programadores lo entienden rápido</li>
+                    <li>✓ Es profesional - Así trabajan en empresas como Google, Microsoft, Meta</li>
+                </ul>
+                
+                <p><strong>Hoy, mis compañeros van a mostrarles exactamente cómo funciona con ejemplos reales en código. ¡Presten atención!"</strong></p>
+            </div>
+            
+            <div class="key-points">
+                <h4>Puntos Clave a Comunicar:</h4>
+                <ul>
+                    <li>POO es un "molde" o "receta"</li>
+                    <li>Se reutiliza para crear múltiples cosas</li>
+                    <li>Ahorra tiempo, errores y mantenimiento</li>
+                    <li>Es cómo trabajan profesionales reales</li>
+                    <li>Transición suave al siguiente estudiante</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ESTUDIANTE 2 -->
+        <div class="student-section">
+            <div class="student-header">
+                <div class="student-number">2</div>
+                <div class="student-info">
+                    <h2>Programador de Clases</h2>
+                    <div class="subtitle">Estructura del Código - 2 minutos</div>
+                </div>
+            </div>
+            
+            <div class="guion">
+                <p><strong>"Gracias a mi compañero. Ahora soy yo quien voy a mostrarles cómo se construye eso que llamamos 'molde' o 'Clase'.</strong></p>
+                
+                <p><em>[Señala la sección "Explicación de Clases" en la pantalla]</em></p>
+                
+                <p><strong>Miren esto: este es el código de una Clase llamada 'Personaje'. Vamos a desglosarla como si fuera una receta de cocina:</strong></p>
+                
+                <p><strong>PASO 1: El Nombre de la Clase</strong></p>
+                <div class="code-block">class Personaje:</div>
+                
+                <p><strong>Aquí decimos 'vamos a crear un molde llamado Personaje'. Sencillo, ¿verdad?</strong></p>
+                
+                <p><strong>PASO 2: Los Ingredientes (Atributos)</strong></p>
+                <div class="code-block">def __init__(self, nombre, vida, tipo):
+    self.nombre = nombre
+    self.vida = vida
+    self.tipo = tipo</div>
+                
+                <p><strong>Esto es como cuando en una receta dices: 'Necesito 2 huevos, 1 taza de harina y sal'. Los atributos son lo que cada personaje debe tener:</strong>
+                <br>- nombre - ¿Cómo se llama? (ejemplo: "Guerrero")
+                <br>- vida - ¿Cuántos puntos de vida tiene? (ejemplo: 100)
+                <br>- tipo - ¿Qué clase es? (ejemplo: "Mago", "Arquero", "Guerrero")</p>
+                
+                <p><strong>PASO 3: Los Métodos (Acciones)</strong></p>
+                <div class="code-block">def atacar(self):
+    return f"{self.nombre} ¡Ataca!"
+    
+def recibir_daño(self, daño):
+    self.vida -= daño
+    return self.vida</div>
+                
+                <p><strong>Un método es como una acción que el personaje puede hacer. En este caso:</strong>
+                <br>- atacar() - El personaje puede atacar
+                <br>- recibir_daño() - El personaje puede recibir daño</p>
+                
+                <p><strong>PASO 4: La Herencia (Las Subclases)</strong></p>
+                <div class="code-block">class Mago(Personaje):
+    def hechizo(self):
+        return f"{self.nombre} lanza un hechizo"</div>
+                
+                <p><strong>Aquí es donde la POO se vuelve poderosa. Imaginen que tenemos un Mago. El Mago es un tipo de Personaje, ¿verdad? Entonces, ¿por qué escribir todo de nuevo?</strong></p>
+                
+                <p><strong>Decimos: 'El Mago HEREDA todo de Personaje' (nombre, vida, atacar, recibir daño), pero además tiene su propia acción especial: lanzar hechizo.</strong></p>
+                
+                <p><strong>Es como si dijéramos: 'Un Mago es un Personaje, pero con poderes mágicos extra'.</strong></p>
+                
+                <p><strong>Así no repito código. Solo agrego lo nuevo. ¡Eso es eficiencia!</strong></p>
+                
+                <p><strong>¿Ven? Con esta estructura, podemos crear:</strong>
+                <br>- Guerreros (atacan con espada)
+                <br>- Magos (lanzan hechizos)
+                <br>- Arqueros (disparan flechas)</p>
+                
+                <p><strong>Todos son personajes, pero cada uno tiene algo especial. Y todo viene de un molde base que no tenemos que reescribir."</strong></p>
+            </div>
+            
+            <div class="key-points">
+                <h4>Puntos Clave a Comunicar:</h4>
+                <ul>
+                    <li>Explicar qué es una Clase (molde)</li>
+                    <li>Mostrar atributos (características del objeto)</li>
+                    <li>Mostrar métodos (acciones que puede hacer)</li>
+                    <li>Explicar herencia (reutilización de código)</li>
+                    <li>Dar ejemplos del mundo real (Mago, Guerrero, Arquero)</li>
+                    <li>Enfatizar que NO se repite código con herencia</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ESTUDIANTE 3 -->
+        <div class="student-section">
+            <div class="student-header">
+                <div class="student-number">3</div>
+                <div class="student-info">
+                    <h2>Desarrollador de Funcionalidades</h2>
+                    <div class="subtitle">Demostración en Vivo - 2-3 minutos</div>
+                </div>
+            </div>
+            
+            <div class="guion">
+                <p><strong>"Perfecto. Ahora que conocen la estructura del código, voy a mostrarles lo emocionante: ¡el código en acción!</strong></p>
+                
+                <p><em>[Señala la sección "Demostración de Funcionalidades"]</em></p>
+                
+                <p><strong>Miren aquí. Tenemos varios personajes ya creados: un Mago, un Guerrero y un Arquero. Cada uno está vivo en la aplicación porque fueron creados usando el molde que mi compañero acaba de explicar.</strong></p>
+                
+                <p><strong>Ahora voy a ejecutar algunas acciones. Vean qué sucede:</strong></p>
+                
+                <p><strong>ACCIÓN 1: El Mago ataca</strong>
+                <br><em>[Hace clic en el botón "Ataque Mágico"]</em></p>
+                
+                <p><strong>¿Ven el resultado? El código ejecutó: print(mago.atacar())</strong></p>
+                
+                <p><strong>En la consola ven: 'Mago Astra ¡Ataca con poder mágico!'</strong></p>
+                
+                <p><strong>Eso significa que el método 'atacar()' que definimos en la Clase Mago se ejecutó. El personaje tiene vida, cada método que creamos funciona exactamente como lo programamos.</strong></p>
+                
+                <p><strong>ACCIÓN 2: El Guerrero recibe daño</strong>
+                <br><em>[Hace clic en el botón "Recibir Daño"]</em></p>
+                
+                <p><strong>¿Lo ven? El Guerrero tenía 100 puntos de vida. Recibió 20 de daño. Ahora tiene 80.</strong></p>
+                
+                <p><strong>El método 'recibir_daño(20)' cambió el valor de la vida. Si recibe más daño, la vida baja más. Así es como funcionan los videojuegos: los personajes pierden vida cuando les atacan.</strong></p>
+                
+                <p><strong>ACCIÓN 3: Polimorfismo en Acción</strong>
+                <br><em>[Hace clic en "Mostrar Habilidades"]</em></p>
+                
+                <p><strong>Aquí está lo genial. Ejecuto el mismo método para tres personajes diferentes:</strong>
+                <br>- El Mago dice: "Astra lanza un hechizo"
+                <br>- El Guerrero dice: "Thorin usa ataque de espada"
+                <br>- El Arquero dice: "Legolas dispara flechas"</p>
+                
+                <p><strong>¿Qué significa esto? Que aunque todos son 'Personajes' y tienen el método 'atacar()', cada uno lo hace diferente. Eso se llama POLIMORFISMO.</strong></p>
+                
+                <p><strong>Es como si tuviera 3 actores diferentes interpretando el mismo personaje: todos son personajes, pero cada uno actúa a su manera.</strong></p>
+                
+                <p><strong>En código, esto es PODEROSO porque:</strong>
+                <br>- Puedo escribir una sola línea de código que funciona para todos
+                <br>- Cada personaje sabe qué hacer según su tipo
+                <br>- No tengo 3 copias del mismo código</p>
+                
+                <p><strong>¿Ven cómo todo está conectado? La Clase define lo básico, la Herencia reutiliza, y el Polimorfismo permite que cada tipo sea especial pero use el mismo código base."</strong></p>
+            </div>
+            
+            <div class="key-points">
+                <h4>Puntos Clave a Comunicar:</h4>
+                <ul>
+                    <li>Mostrar métodos ejecutándose en tiempo real</li>
+                    <li>Explicar que cada acción corresponde a código</li>
+                    <li>Demostrar cambios en los atributos (como vida)</li>
+                    <li>Explicar Polimorfismo (mismo método, diferente resultado)</li>
+                    <li>Conectar la teoría con la práctica visual</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ESTUDIANTE 4 -->
+        <div class="student-section">
+            <div class="student-header">
+                <div class="student-number">4</div>
+                <div class="student-info">
+                    <h2>Interactor con el Público</h2>
+                    <div class="subtitle">Interacción e Quiz - 2-3 minutos</div>
+                </div>
+            </div>
+            
+            <div class="guion">
+                <p><strong>"¡Ahora es el turno del público! Hasta aquí hemos explicado teoría, pero la programación se aprende haciendo.</strong></p>
+                
+                <p><em>[Señala la sección "Crear tu Personaje"]</em></p>
+                
+                <p><strong>Necesito que alguien del público suba y ayude a crear un nuevo personaje. ¿Alguien se anima?</strong></p>
+                
+                <p><em>[Espera a que alguien suba]</em></p>
+                
+                <p><strong>Perfecto. Mira, te voy a pedir que rellenes este formulario:</strong></p>
+                
+                <p><strong>PASO 1: Dale un nombre a tu personaje</strong>
+                <br><em>[Espera a que escriba]</em>
+                <br><strong>"¿Te gusta? Excelente. Ese nombre va a ser uno de los ATRIBUTOS de nuestro personaje."</strong></p>
+                
+                <p><strong>PASO 2: Elige qué tipo es (Mago, Guerrero o Arquero)</strong>
+                <br><em>[Espera a que elija]</em>
+                <br><strong>"Elegiste {tipo}. Eso también es un ATRIBUTO. Cada tipo tiene una acción especial diferente."</strong></p>
+                
+                <p><strong>PASO 3: Dale puntos de vida</strong>
+                <br><em>[Espera a que ingrese]</em>
+                <br><strong>"Muy bien. La vida es otro ATRIBUTO. Ahora ve esto..."</strong></p>
+                
+                <p><em>[Hace clic en "Crear Personaje"]</em></p>
+                
+                <p><strong>¿Lo ven? Acabamos de crear una INSTANCIA. Eso significa que tomamos el molde (la Clase) y lo usamos para crear algo real, algo concreto.</strong></p>
+                
+                <p><strong>Tu personaje ahora existe en el código. Tiene nombre, tipo y vida. Todo porque usamos la Clase que mis compañeros explicaron.</strong></p>
+                
+                <p><strong>Si queremos crear otro, usamos el mismo molde pero con diferentes valores. Así es como en videojuegos reales crean millones de personajes con código limpio y ordenado.</strong></p>
+                
+                <h3 style="margin-top: 20px; color: #7c3aed;">SECCIÓN DE QUIZ (Refuerzo de Conceptos)</h3>
+                
+                <p><strong>Ahora vamos a hacer un pequeño juego de preguntas. Si responden bien, reciben un obsequio.</strong></p>
+                
+                <p><strong>PREGUNTA 1 (Fácil):</strong>
+                <br>"¿Cuál es el nombre del personaje que acabamos de crear?"
+                <br><em>[Señala la pantalla]</em>
+                <br>"Exacto, {nombre}. Eso es un ATRIBUTO."</p>
+                
+                <p><strong>PREGUNTA 2 (Medio):</strong>
+                <br>"¿Alguien sabe qué es una CLASE en programación?"
+                <br><em>[Espera respuesta]</em>
+                <br>"Muy bien, es como un molde. Es la estructura que usamos para crear objetos sin reescribir código."</p>
+                
+                <p><strong>PREGUNTA 3 (Medio):</strong>
+                <br>"¿Qué diferencia hay entre una Clase y un Objeto?"
+                <br><em>[Espera respuesta]</em>
+                <br>"Excelente observación. La Clase es el molde (el plano), y el Objeto es la cosa real creada usando ese molde. Es como la diferencia entre una receta de pastel y un pastel hecho."</p>
+                
+                <p><strong>PREGUNTA 4 (Difícil):</strong>
+                <br>"¿Qué ventaja tiene usar HERENCIA en lugar de copiar todo el código?"
+                <br><em>[Espera respuesta]</em>
+                <br>"Correcto. Si hay un error en el código base, solo lo arreglan una vez y todos los personajes se benefician. ¡Eficiencia!"</p>
+                
+                <p><strong>PREGUNTA 5 (Concepto General):</strong>
+                <br>"¿Dónde ven ustedes POO en su vida diaria?"
+                <br><em>[Escucha respuestas]</em>
+                <br>"¡Exactamente! Cada vez que usan un videojuego, una app móvil, Instagram, Netflix... todo eso usa POO. Los programadores organizan el código en clases para que sea mantenible, seguro y rápido."</p>
+                
+                <h3 style="margin-top: 20px; color: #7c3aed;">CIERRE:</h3>
+                
+                <p><strong>"Antes de terminar, quiero que se lleven esta idea:</strong></p>
+                
+                <p><strong>POO no es algo complicado y aburrido. POO es una forma de PENSAR. Es decir: 'En lugar de escribir código caótico, voy a crear estructuras que se reutilizan'.</strong></p>
+                
+                <p><strong>Así se crean aplicaciones reales. Así trabajan los mejores programadores del mundo.</strong></p>
+                
+                <p><strong>Si alguno de ustedes se interesa en programación, ahora ya saben que Python es el lenguaje perfecto para empezar. Y lo primero que aprenderán será exactamente lo que les mostramos hoy: clases, objetos, herencia y polimorfismo.</strong></p>
+                
+                <p><strong>¡Gracias por visitarnos!"</strong></p>
+            </div>
+            
+            <div class="key-points">
+                <h4>Puntos Clave a Comunicar:</h4>
+                <ul>
+                    <li>Dejar que alguien del público cree un personaje</li>
+                    <li>Explicar que es una INSTANCIA</li>
+                    <li>Conectar la acción con el código subyacente</li>
+                    <li>Hacer preguntas que refuercen conceptos</li>
+                    <li>Dar obsequios a quienes respondan bien</li>
+                    <li>Cierre inspirador conectando con aplicaciones reales</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- TABLA RESUMEN -->
+        <div style="margin: 50px 0;">
+            <h2 style="color: #7c3aed; margin-bottom: 20px;">Resumen de Asignaciones</h2>
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>Estudiante</th>
+                        <th>Rol</th>
+                        <th>Duración</th>
+                        <th>Puntos Clave</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>1</strong></td>
+                        <td>Presentador</td>
+                        <td>1-2 min</td>
+                        <td>Bienvenida, explicar qué es POO con analogías</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2</strong></td>
+                        <td>Programador de Clases</td>
+                        <td>2 min</td>
+                        <td>Estructura de clases, atributos, métodos, herencia</td>
+                    </tr>
+                    <tr>
+                        <td><strong>3</strong></td>
+                        <td>Desarrollador de Funcionalidades</td>
+                        <td>2-3 min</td>
+                        <td>Ejecutar métodos, demostrar polimorfismo</td>
+                    </tr>
+                    <tr>
+                        <td><strong>4</strong></td>
+                        <td>Interactor</td>
+                        <td>2-3 min</td>
+                        <td>Dejar crear personajes, quiz, cierre</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- CONSEJOS GENERALES -->
+        <div class="tips-section">
+            <h3>Consejos Generales para la Presentación</h3>
+            <ul>
+                <li>Practica antes - Ensayen juntos al menos 2-3 veces</li>
+                <li>Hablen lento y claro - El público no está familiarizado con términos técnicos</li>
+                <li>Usen la pantalla - Siempre señalen en la pantalla lo que explican</li>
+                <li>Hagan pausas - Dejen que el público procese la información</li>
+                <li>Manténganse en el tiempo - No se pasen, 5-8 minutos totales</li>
+                <li>Estén preparados - Si alguien hace una pregunta que no puedan responder, digan "Excelente pregunta, aquí están nuestros contactos si quieren saber más"</li>
+                <li>Sonrían - La energía positiva es contagiosa</li>
+                <li>Disfruten - ¡Ustedes son expertos en este tema para el público!</li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            <p>Documento preparado para: Casa Abierta - Presentación de POO</p>
+            <p>Materia: Programación y Base de Datos</p>
+            <p>Generado con love para tu presentación</p>
+        </div>
+    </div>
+
+    <script>
+        // Pequeña función para mejorar la experiencia de impresión
+        if (window.matchMedia) {
+            const mediaQueryList = window.matchMedia('print');
+            mediaQueryList.addListener((mql) => {
+                if (mql.matches) {
+                    console.log('Iniciando impresión...');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
